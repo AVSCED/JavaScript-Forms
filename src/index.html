@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- To Take User's input of weight and age -->
+    <form id="myForm">
+      <h2>Enter Your Weight and Age Here !</h2>
+      <p>
+        Enter Your Age :<input
+          type="number"
+          id="age"
+          min="5"
+          max="20"
+          required="required"
+        />
+      </p>
+      <p>
+        Enter Your Weight:
+        <input
+          type="number"
+          id="weight"
+          min="15"
+          max="40"
+          required="required"
+        />
+      </p>
+      <button type="submit" onclick="healthCheck()">Submit</button>
+    </form>
+    <!-- To Display Appropriate Msg  -->
+    <p id="message"></p>
+  </body>
+  <script src="./script.js"></script>
+</html>
