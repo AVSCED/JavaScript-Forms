@@ -2,7 +2,6 @@ var age;
 var weight;
 // Function to recieve output from the user
 function healthCheck() {
-  var flag = 2;
   var form = document.getElementById("myForm");
   //To Prevent Form From Refreshing the page onclick Submit button
   function handleForm(event) {
@@ -16,33 +15,64 @@ function healthCheck() {
   if (age == 0 || weight == 0) {
     alert("Please Enter the Remaining Fields!");
   } else {
-    if (age <= 7) {
-      if (weight >= 15 && weight <= 20) {
-        flag = 1;
+    if (age >= 5 && age <= 7) {
+      //Underweight If condition
+      if (weight < 15) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:red'>You're Under Weight !</span>";
+      } //Condition to check if the weight is in the apppropriate range
+      else if (weight >= 15 && weight <= 20) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:#3cb371'>You're in the Weight Range !</span>";
+      }// Overweight Condition
+       else if (weight > 20) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:red'>You're Over Weight Consult a Doctor !</span>";
       }
     }
     if (age > 7 && age <= 10) {
-      if (weight >= 20 && weight <= 25) {
-        flag = 1;
+      //Underweight If condition
+      if (weight < 20) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:red'>You're Under Weight !</span>";
+      }//Condition to check if the weight is in the apppropriate range 
+      else if (weight >= 20 && weight <= 25) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:#3cb371'>You're in the Weight Range !</span>";
+      } else if (weight > 25) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:red'>You're Over Weight Consult a Doctor !</span>";
       }
     }
     if (age > 10 && age <= 15) {
-      if (weight >= 25 && weight <= 30) {
-        flag = 1;
+      //Underweight If condition
+      if (weight < 25) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:red'>You're Under Weight !</span>";
+      }//Condition to check if the weight is in the apppropriate range
+       else if (weight >= 25 && weight <= 30) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:#3cb371'>You're in the Weight Range !</span>";
+      }// Overweight Condition 
+      else if (weight > 25) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:red'>You're Over Weight Consult a Doctor !</span>";
       }
     }
     if (age > 15 && age <= 20) {
-      if (weight >= 30 && weight <= 40) {
-        flag = 1;
+      //Underweight If condition
+      if (weight < 30) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:red'>You're Under Weight !</span>";
+      }//Condition to check if the weight is in the apppropriate range
+       else if (weight >= 30 && weight <= 40) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:#3cb371'>You're in the Weight Range !</span>";
+      }// Overweight Condition 
+      else if (weight > 40) {
+        document.getElementById("message").innerHTML =
+          "<span style='color:red'>You're Over Weight Consult a Doctor !</span>";
       }
     }
-  }
-  // Checking if any of the cases were executed and displaying appropriate msg
-  if (flag == 1) {
-    document.getElementById("message").innerHTML =
-      "<span style='color:#3cb371'>You're in the Weight Range !</span>";
-  } else if (flag == 0) {
-    document.getElementById("message").innerHTML =
-      "<span style='color:red'>You're Over Weight Consult a Doctor !</span>";
   }
 }
